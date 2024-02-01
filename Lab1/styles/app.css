@@ -2,7 +2,7 @@
 Lab 1
 Group Members:
 - Yashvi Patel: 100900705
-- Justin Wastle: 
+- Justin Wastle: 100869386
 - Andrew Mekhail: 100828858
 Date: February 1st, 2024 
 */
@@ -71,6 +71,9 @@ div.products{
 }
 .products p{
     width: 500px;
+    font-size: x-large;
+    line-height: 2;
+    
 }
 
 div.contact{
