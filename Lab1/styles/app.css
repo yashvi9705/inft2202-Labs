@@ -28,5 +28,16 @@ Date: February 1st, 2024
 }
 
 .container {
+    border-style: solid;
     padding: 0 16px;
+    text-align: center;
+}
+.container p{
+    width: 200px;
+    padding-left: 500px;
+    font-size: larger;
+}
+
+body.index{
+    background-image: url("/Lab1/images/img4.jpg");
 }
