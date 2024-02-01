@@ -21,7 +21,7 @@ class Navbar extends HTMLElement {
                     <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="index.html"><i class="fa fa-home"
-                            aria-hidden="true"></i>Home</a>
+                            aria-hidden="true"></i> Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="products.html"><i class="fa fa-th" aria-hidden="true"></i> Products</a>
