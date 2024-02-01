@@ -38,6 +38,20 @@ Date: February 1st, 2024
     font-size: larger;
 }
 
-body.index{
+body{
     background-image: url("/Lab1/images/img4.jpg");
+}
+
+
+div.products{
+   padding-left: 25%;
+    padding-top: 20px;
+    display: flex;
+}
+.products img{
+    width: 200px; 
+     
+}
+.products p{
+    width: 400px;
 }
