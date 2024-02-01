@@ -27,7 +27,7 @@ class Navbar extends HTMLElement {
                         <a class="nav-link" href="products.html"><i class="fa fa-th" aria-hidden="true"></i>Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html"> <i class="fa fa-bell" aria-hidden="true"></i>Service</a>
+                        <a class="nav-link" href="services.html"> <i class="fa fa-bell" aria-hidden="true"> </i>Service</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i>About Us</a>

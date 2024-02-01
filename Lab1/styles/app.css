@@ -7,9 +7,14 @@ Group Members:
 Date: February 1st, 2024 
 */
 
+body{
+    background-color:#CACFD6;
+}
 .about-us {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    padding: 10px;
+    padding-left: 50px;
 }
 
 .details {
@@ -19,8 +24,16 @@ Date: February 1st, 2024
     padding: 0 10px;
 }
 
+.details img {
+    width: 200px;
+    height: 500px;
+  
+}
+
+
 .card {
     border: #000;
+    border-style: solid;
     border-radius: 2px;
     border-style: solid;
     border-width: 2px;
@@ -28,8 +41,8 @@ Date: February 1st, 2024
 }
 
 .container {
-    border-style: solid;
     padding: 0 16px;
+    margin-top: 5px;
     text-align: center;
 }
 .container p{
@@ -42,16 +55,24 @@ body{
     background-image: url("/Lab1/images/img4.jpg");
 }
 
+div.servicesPage{
+    background-color:#CACFD6;
+}
 
 div.products{
-   padding-left: 25%;
-    padding-top: 20px;
     display: flex;
+    padding: 50px  80px  50px 70px;
 }
 .products img{
-    width: 200px; 
+    margin: 10px;
+    width: 700px; 
+    border-radius: 10px;
      
 }
 .products p{
-    width: 400px;
+    width: 500px;
+}
+
+div.contact{
+    padding-left: 550px;
 }
