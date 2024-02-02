@@ -39,3 +39,21 @@ humanResourcesItem.appendChild(humanResourcesLink);
 const contactUsLink = Array.from(navbarLinks).find(link => link.textContent.trim() == "Contact us");
 // In the navbar ul, insert the new elem before the contact us link
 navbarUl.insertBefore(humanResourcesItem, contactUsLink.parentNode)
+
+// 3d. Add a fixed navbar (footer) to the bottom of the page
+// Create an elem for the footer
+const footer = document.createElement("nav");
+// Set the nav class name
+footer.className = "navbar fixed-bottom navbar-light bg-light";
+
+// Create an elem for the footer content
+const footerDiv = document.createElement("div");
+// Set the div class name
+footerDiv.className = "container-fluid";
+// Set the div inner html
+footerDiv.innerHTML = "&copy; Copyright 2024";
+
+// Append the footer div to the footer nav
+footer.appendChild(footerDiv);
+// Append the footer to the document body
+document.body.appendChild(footer);
