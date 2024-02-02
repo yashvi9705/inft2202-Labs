@@ -57,3 +57,14 @@ footerDiv.innerHTML = "&copy; Copyright 2024";
 footer.appendChild(footerDiv);
 // Append the footer to the document body
 document.body.appendChild(footer);
+
+// 4b. When the user clicks on the submit button, output their info to the console
+const registrationForm = document.getElementById("registration-form");
+registrationForm.addEventListener("submit", (e) => {
+    let name = document.getElementById("inputName");
+    let contactNumber = document.getElementById("inputContactNumber");
+    let email = document.getElementById("inputEmail");
+    let message = document.getElementById("inputMessage");
+
+    console.log(`!! Form Submission !!\nName: ${name.textContent}\nContact Number: ${contactNumber.textContent}\nEmail: ${email.textContent}\nMessage: ${message.textContent}`)
+})
