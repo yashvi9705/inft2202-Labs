@@ -9,15 +9,37 @@ Date: February 1st, 2024
 
 body{
     background-color:#CACFD6;
-    margin-bottom: 50px ;
 }
 .about-us {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 10px;
-    padding-left: 50px;
+    padding-left: 60px;
+}
+body.index {
+    background-image: url('../images/homepage.gif');
+    /* image src 'https://www.pinterest.ca/pin/588704982569795906/'*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  
 }
 
+/* home page */
+.home-container {
+    align-items: flex-start;
+    max-width: 800px; 
+    margin: 0px 40px 20px auto; 
+    padding: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    font-size: larger;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/*About us page */
 .details {
     float: left;
     width: 30%;
@@ -27,10 +49,9 @@ body{
 
 .details img {
     width: 200px;
-    height: 500px;
-  
+    height:350px;
+    border-radius: 20px;
 }
-
 
 .card {
     border: #000;
@@ -39,7 +60,9 @@ body{
     border-style: solid;
     border-width: 2px;
     margin: 8px;
+    border-radius: 20px;
 }
+
 
 .container {
     padding: 0 16px;
@@ -52,31 +75,32 @@ body{
     font-size: larger;
 }
 
-body{
-    background-image: url("/Lab1/images/img4.jpg");
-}
 
-div.servicesPage{
-    background-color:#CACFD6;
-}
-
+/*Products Page*/
 div.products{
     display: flex;
-    padding: 50px  80px  50px 70px;
+    padding: 50px  80px  50px 90px;
+    
 }
 .products img{
-    margin: 10px;
-    width: 700px; 
+    margin: 7px;
+    width: 500px; 
     border-radius: 10px;
+    height: 350px;
+    float: right;
+
      
 }
 .products p{
     width: 500px;
-    font-size: x-large;
+    font-size:larger;
     line-height: 2;
+    padding: 20px;
+    font-style: italic;
     
 }
 
+/*Contact Us Page*/
 div.contact{
     padding-left: 33.5%;
 }
