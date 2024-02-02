@@ -7,6 +7,9 @@ Group Members:
 Date: February 1st, 2024 
 */
 
+// Get Current Page
+const currentPage = window.location.pathname.split("/").pop();
+
 // Inject site content
 
 const navbar = document.getElementById("navbarSupportedContent");
@@ -59,12 +62,20 @@ footer.appendChild(footerDiv);
 document.body.appendChild(footer);
 
 // 4b. When the user clicks on the submit button, output their info to the console
-const registrationForm = document.getElementById("registration-form");
-registrationForm.addEventListener("submit", (e) => {
-    let name = document.getElementById("inputName");
-    let contactNumber = document.getElementById("inputContactNumber");
-    let email = document.getElementById("inputEmail");
-    let message = document.getElementById("inputMessage");
+if (currentPage == "contact.html") {
+    const registrationForm = document.getElementById("registration-form");
+    registrationForm.addEventListener("submit", (e) => {
+        e.preventDefault()
 
-    console.log(`!! Form Submission !!\nName: ${name.textContent}\nContact Number: ${contactNumber.textContent}\nEmail: ${email.textContent}\nMessage: ${message.textContent}`)
-})
+        setTimeout(() => {
+            window.location.replace("index.html")
+        }, 3000);
+
+        let name = document.getElementById("inputName");
+        let contactNumber = document.getElementById("inputContactNumber");
+        let email = document.getElementById("inputEmail");
+        let message = document.getElementById("inputMessage");
+
+        console.log(`!! Form Submission !!\nName: ${name.textContent}\nContact Number: ${contactNumber.textContent}\nEmail: ${email.textContent}\nMessage: ${message.textContent}`)
+    })
+}
