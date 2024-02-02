@@ -9,6 +9,7 @@ Date: February 1st, 2024
 
 body{
     background-color:#CACFD6;
+    margin-bottom: 50px ;
 }
 .about-us {
     font-family: Arial, Helvetica, sans-serif;
@@ -77,5 +78,5 @@ div.products{
 }
 
 div.contact{
-    padding-left: 550px;
+    padding-left: 33.5%;
 }
