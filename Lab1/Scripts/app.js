@@ -170,6 +170,9 @@ switch (currentPage) {
         }];
 
         for (let member of team) {
+            let detailsDiv = document.createElement("div");
+            detailsDiv.className = "details";
+
             let cardDiv = document.createElement("div");
             cardDiv.className = "card";
 
@@ -187,7 +190,8 @@ switch (currentPage) {
             nameH2.textContent = member.name;
             nameDiv.appendChild(nameH2);
 
-            contentDiv.appendChild(cardDiv);
+            detailsDiv.appendChild(cardDiv);
+            contentDiv.appendChild(detailsDiv);
         }
         document.body.appendChild(contentDiv);
         break;
