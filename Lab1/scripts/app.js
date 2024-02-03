@@ -242,7 +242,7 @@ switch (currentPage) {
             div.className = "form-group col-md-6";
 
             let label = document.createElement("label");
-            label.for = inputObj.id;
+            label.setAttribute("for", inputObj.id);
             label.textContent = inputObj.name;
             div.appendChild(label);
 
@@ -352,6 +352,6 @@ if (currentPage == "contact.html") {
         let email = document.getElementById("inputEmail");
         let message = document.getElementById("inputMessage");
 
-        console.log(`!! Form Submission !!\nName: ${name.textContent}\nContact Number: ${contactNumber.textContent}\nEmail: ${email.textContent}\nMessage: ${message.textContent}`)
+        console.log(`!! Form Submission !!\nName: ${name.value}\nContact Number: ${contactNumber.value}\nEmail: ${email.value}\nMessage: ${message.value}`);
     })
-}
+};
