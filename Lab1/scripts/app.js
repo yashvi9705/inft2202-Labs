@@ -161,12 +161,12 @@ switch (currentPage) {
         },
         {
             name: "Yashvi",
-            image: "images/yashvi.jpg", // Source: https://www.pinterest.ca/pin/588704982569796118
+            image: "images/Yashvi.jpg", // Source: https://www.pinterest.ca/pin/588704982569796118
 
         },
         {
             name: "Justin",
-            image: "images/justin.jpg", // Source: https://www.pinterest.ca/pin/588704982569796070
+            image: "images/Justin.jpg", // Source: https://www.pinterest.ca/pin/588704982569796070
         }];
 
         for (let member of team) {
