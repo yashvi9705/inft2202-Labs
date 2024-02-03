@@ -13,7 +13,7 @@ const currentPage = window.location.pathname.split("/").pop();
 // Prepend the navbar component to every page
 document.body.prepend(document.createElement("navbar-component"))
 
-// Inject site content for each page
+// 3a. Inject site content for each page
 switch (currentPage) {
     // Content for index.html
     case "index.html": {
