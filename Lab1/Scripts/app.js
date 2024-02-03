@@ -54,7 +54,7 @@ switch (currentPage) {
         let products = [
             {
                 content: "One of our teams past projects, was a Database for Lake Ridge Healthcare Centre, located in Oshawa Ontario. The goal of this project was to improve functionality and security of information in the database. We included information on rooms, charges, patients, cost centres, and much more.",
-                image: "images/Database.jpg",
+                image: "images/Database.jpg", // Source: https://www.pinterest.ca/pin/588704982569774273
                 imageAlt: "Database",
             },
             {
@@ -101,18 +101,18 @@ switch (currentPage) {
         let services = [
             {
                 content: "Web Development: We can create well-functioning, appealing and inexpensive websites for consumers as each member of our team has much experience in building web applications, and sites alike. Whether you wish to display information about your product or service or to create a database/hub for your business, we can create a state-of-the-art site to meet all of your needs.",
-                image: "images/image1.gif",
+                image: "images/image1.gif", // Source: https://www.pinterest.ca/pin/588704982569774068
                 imageAlt: "Animation1",
             },
             {
                 content: "Test Automation: Our team can create testing software used to evaluate the performance of clients' websites, looking at all possible issues with each part of the site. This ensures sites meet the function they have been created for and leave users satisfied.",
-                image: "images/image2.gif",
+                image: "images/image2.gif", // Source: https://www.pinterest.ca/pin/588704982569774177
                 imageAlt: "Animation2",
 
             },
             {
                 content: "Custom Programming: We can also take requests for different coding projects, such as a database, website, windows application, and much more.",
-                image: "images/image3.gif",
+                image: "images/image3.gif", // Source: https://www.pinterest.ca/pin/588704982569774273
                 imageAlt: "Animation3",
             }
         ];
@@ -157,16 +157,16 @@ switch (currentPage) {
         // Create an array for our team
         let team = [{
             name: "Andrew",
-            image: "images/andrew.jpg",
+            image: "images/andrew.jpg", // Source: https://www.pinterest.ca/pin/588704982569796070
         },
         {
             name: "Yashvi",
-            image: "images/yashvi.jpg",
+            image: "images/yashvi.jpg", // Source: https://www.pinterest.ca/pin/588704982569796118
 
         },
         {
             name: "Justin",
-            image: "images/justin.jpg",
+            image: "images/justin.jpg", // Source: https://www.pinterest.ca/pin/588704982569796070
         }];
 
         for (let member of team) {
