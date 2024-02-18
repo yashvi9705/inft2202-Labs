@@ -364,4 +364,20 @@ if (currentPage == "contact.html") {
     })
 };
 
+if(currentPage == "login.html"){
+    document.getElementById("loginButton").addEventListener("click", function(e){
+        e.preventDefault();
+        var username = document.getElementById("inputUserName").value;
+        const user = document.createElement("li");
+        user.className = "nav-item";
+        const userNamesLink = document.createElement("a");
+        userNamesLink.className = "nav-link";
+        userNamesLink.innerHTML = "<li></li>";
+        userNamesLink.firstChild.textContent = username;
+        user.appendChild(userNamesLink);
+        const contactUsLink = Array.from(navbarLinks).find(link => link.textContent.trim() == "LoginIn/LogOut");
+        navbarUl.insertBefore(user, contactUsLink.parentNode)
+
+    });
+};
 
