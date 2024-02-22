@@ -381,3 +381,16 @@ if(currentPage == "login.html"){
     });
 };
 
+// Creating the div to hold error messages on the register page. Lab 2 Section 2b
+$(document).ready(function() {
+    var errorMessageDiv = $('<div>', {
+        id: 'ErrorMessage'
+    });
+
+    // Append the div to the registerContainer
+    $('#RegisterBody').append(errorMessageDiv);
+    // check if there is data in the div, if there is show it,
+    // else hide it.
+    $("#ErrorMessage").toggle(Boolean($("#ErrorMessage").text().trim()));
+});
+
