@@ -388,7 +388,7 @@ $(document).ready(function() {
     });
 
     // Append the div to the registerContainer
-    $('#RegisterBody').append(errorMessageDiv);
+    $('#UserRegister').append(errorMessageDiv);
     // check if there is data in the div, if there is show it,
     // else hide it.
     $("#ErrorMessage").toggle(Boolean($("#ErrorMessage").text().trim()));
