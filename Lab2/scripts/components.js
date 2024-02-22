@@ -16,7 +16,7 @@ class Navbar extends HTMLElement {
         this.innerHTML = `
             <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
                 <div class="container-fluid">
-                <a class="navbar-brand" href="#">INFT 2201 - Lab 1</a>
+                <a class="navbar-brand" href="#">INFT 2201 - Lab 2</a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                     <li class="nav-item">

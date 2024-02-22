@@ -270,7 +270,76 @@ switch (currentPage) {
         break;
     }
     case "login.html": {
-        // If you don't want any content on the register page, you can leave this case empty.
+        let loginDivMain = document.createElement("div");
+        loginDivMain.id = "UserRegister";
+
+        // Create an element for the contact form
+        let loginForm = document.createElement("form");
+        loginForm.id = "registration-form";
+        loginForm.name = "registration-form";
+        loginForm.className = "row g-3";
+        
+        // create the header
+        let loginHeader = document.createElement("h1");
+        loginHeader.innerHTML = "Login";
+        loginForm.appendChild(loginHeader);
+
+        // Create an array for the input objects
+        let inputs = [{
+            id: "inputUserName",
+            name: "UserName",
+            type: "text",
+            iconClass: "fa fa-user",
+        },
+        {
+            id: "inputPassword",
+            name: "Password",
+            type: "password",
+            iconClass: "fa fa-lock",
+        }];
+
+        // Add each input object to the form
+        for (let inputObj of inputs) {
+            let div = document.createElement("div");
+            div.className = "form-group col-12";
+            let icon = document.createElement("i");
+
+            // add the icon.
+            icon.className = inputObj.iconClass;
+            icon.setAttribute("aria-hidden", "true");
+            div.appendChild(icon);  
+            
+            let label = document.createElement("label");
+            label.setAttribute("for", inputObj.id);
+            label.textContent = inputObj.name;
+            div.appendChild(label);
+
+            let input = document.createElement("input");
+            input.type = inputObj.type;
+            input.className = "form-control";
+            input.id = inputObj.id;
+            input.placeholder = inputObj.name;
+            div.appendChild(input);
+
+            loginForm.appendChild(div);
+        }
+
+        // Create an elem for the submit button
+        let submitButton = document.createElement("button");
+        submitButton.type = "submit";
+        submitButton.id = "loginButton";
+        submitButton.className = "btn btn-primary";
+        submitButton.textContent = "Login";
+        // Add the button to the form
+        loginForm.appendChild(submitButton);
+
+        // Create a paragraph for the login link
+        let registerLinkParagraph = document.createElement("p");
+        registerLinkParagraph.innerHTML = 'Do not have an account? <a href="./register.html">Register Here!</a>';
+
+        loginForm.appendChild(registerLinkParagraph);
+        loginDivMain.appendChild(loginForm);
+        document.body.appendChild(loginDivMain);
 
         break;
     }
@@ -286,127 +355,127 @@ switch (currentPage) {
         registerForm.className = "row g-3";
         
     
-        let header = document.createElement("h1");
-        header.innerHTML = "Register";
+        let registerHeader = document.createElement("h1");
+        registerHeader.innerHTML = "Register";
         // Create a paragraph for the login link
-        let description = document.createElement("p");
-        description.innerHTML = "Create your own account  It's free and it only takes a minute";
-        registerForm.appendChild(header);
+        let registerDescription = document.createElement("p");
+        registerDescription.innerHTML = "Create your own account  It's free and it only takes a minute";
+        registerForm.appendChild(registerHeader);
+        registerForm.appendChild(registerDescription);
 
         let errorParagraph = document.createElement("p");
-            errorParagraph.id = "ErrorMessage";
-            errorParagraph.style.display = "none";
+        errorParagraph.id = "ErrorMessage";
+        errorParagraph.style.display = "none";
         registerForm.appendChild(errorParagraph);
 
-    // Create an array for the input objects
-    let inputs = [{
-        id: "inputFirstName",
-        name: "First Name",
-        type: "text",
-        colClass: "col-md-6",
-    },
-    {
-        id: "inputLastName",
-        name: "Last Name",
-        type: "text",
-        colClass: "col-md-6",
-    },
-    {
-        id: "inputEmail",
-        name: "Email Address",
-        type: "email",
-        colClass: "col-12",
-    },
-    {
-        id: "inputPassword",
-        name: "Password",
-        type: "password",
-        colClass: "col-12",
-    },
-    {
-        id: "inputConfirmPassword",
-        name: "Confirm Password",
-        type: "password",
-        colClass: "col-12",
-    }];
+        // Create an array for the input objects
+        let inputs = [{
+            id: "inputFirstName",
+            name: "First Name",
+            type: "text",
+            colClass: "col-md-6",
+        },
+        {
+            id: "inputLastName",
+            name: "Last Name",
+            type: "text",
+            colClass: "col-md-6",
+        },
+        {
+            id: "inputEmail",
+            name: "Email Address",
+            type: "email",
+            colClass: "col-12",
+        },
+        {
+            id: "inputPassword",
+            name: "Password",
+            type: "password",
+            colClass: "col-12",
+        },
+        {
+            id: "inputConfirmPassword",
+            name: "Confirm Password",
+            type: "password",
+            colClass: "col-12",
+        }];
 
-    // Add each input object to the form
-    for (let inputObj of inputs) {
-        let div = document.createElement("div");
-        div.className = `form-group ${inputObj.colClass}`;
+        // Add each input object to the form
+        for (let inputObj of inputs) {
+            let div = document.createElement("div");
+            div.className = `form-group ${inputObj.colClass}`;
 
-        let label = document.createElement("label");
-        label.setAttribute("for", inputObj.id);
-        label.className = inputObj.classes
-        label.textContent = inputObj.name;
-        div.appendChild(label);
+            let label = document.createElement("label");
+            label.setAttribute("for", inputObj.id);
+            label.className = inputObj.classes
+            label.textContent = inputObj.name;
+            div.appendChild(label);
 
-        let input = document.createElement("input");
-        input.type = inputObj.type;
-        input.className = "form-control";
-        input.id = inputObj.id;
-        input.placeholder = inputObj.name;
-        div.appendChild(input);
+            let input = document.createElement("input");
+            input.type = inputObj.type;
+            input.className = "form-control";
+            input.id = inputObj.id;
+            input.placeholder = inputObj.name;
+            div.appendChild(input);
 
-        registerForm.appendChild(div);
-    }
-
-    // Create an elem for the submit button
-    let submitButton = document.createElement("button");
-    submitButton.type = "submit";
-    submitButton.className = "btn btn-primary";
-    submitButton.textContent = "Register";
-    // Add the button to the form
-    registerForm.appendChild(submitButton);
-
-    // Create a paragraph for the login link
-    let loginLinkParagraph = document.createElement("p");
-    loginLinkParagraph.innerHTML = 'Already Have an account? <a href="./login.html">Login Here!</a>';
-
-    registerForm.appendChild(loginLinkParagraph);
-    
-   
-    
-    // Create an elem for the error messages div
-    let errorMessagesDiv = document.createElement("div");
-    errorMessagesDiv.id = "ErrorMessage";
-    errorMessagesDiv.style.display = "none"; // Initially hide the error messages
-
-    // Append the error messages div to the body
-    document.body.appendChild(errorMessagesDiv);
-
-    // Validate First Name and Last Name length on form submission
-    registerForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        // Clear previous error messages
-        errorMessagesDiv.innerHTML = "";
-        errorMessagesDiv.style.display = "none";
-
-        // Validate First Name length
-        let firstNameInput = document.getElementById("inputFirstName");
-        let lastNameInput = document.getElementById("inputLastName");
-        if (firstNameInput.value.length < 2) {
-            displayError("First Name must be at least 2 characters.");
-            return;
-        }
-        // Validate Last Name length
-        else if (lastNameInput.value.length < 2) {
-            displayError("Last Name must be at least 2 characters.");
-            return;
+            registerForm.appendChild(div);
         }
 
-    });
+        // Create an element for the submit button
+        let submitButton = document.createElement("button");
+        submitButton.type = "submit";
+        submitButton.className = "btn btn-primary";
+        submitButton.textContent = "Register";
 
-    function displayError(errorMessage) {
-        // Display error message in the div      
-        errorParagraph.textContent = errorMessage;
-        errorParagraph.style.display = "block";
-    }
+        // Add the button to the form
+        registerForm.appendChild(submitButton);
 
-    registerDivMain.appendChild(registerForm);
-    document.body.appendChild(registerDivMain);
-    break;
+        // Create a paragraph for the login link
+        let loginLinkParagraph = document.createElement("p");
+        loginLinkParagraph.innerHTML = 'Already Have an account? <a href="./login.html">Login Here!</a>';
+
+        registerForm.appendChild(loginLinkParagraph);
+        
+        // Create an elem for the error messages div
+        let errorMessagesDiv = document.createElement("div");
+        errorMessagesDiv.id = "ErrorMessage";
+        errorMessagesDiv.style.display = "none"; // Initially hide the error messages
+
+        // Append the error messages div to the body
+        document.body.appendChild(errorMessagesDiv);
+
+        // Validate First Name and Last Name length on form submission
+        registerForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Clear previous error messages
+            errorMessagesDiv.innerHTML = "";
+            errorMessagesDiv.style.display = "none";
+
+            // Validate First Name length
+            let firstNameInput = document.getElementById("inputFirstName");
+            let lastNameInput = document.getElementById("inputLastName");
+            if (firstNameInput.value.length < 2) {
+                displayError("First Name must be at least 2 characters.");
+                return;
+            }
+            // Validate Last Name length
+            else if (lastNameInput.value.length < 2) {
+                displayError("Last Name must be at least 2 characters.");
+                return;
+            }
+
+        });
+
+        function displayError(errorMessage) {
+            // Display error message in the div      
+            errorParagraph.textContent = errorMessage;
+            errorParagraph.style.display = "block";
+        }
+
+        registerDivMain.appendChild(registerForm);
+        document.body.appendChild(registerDivMain);
+        break;
 
     }
     // Content for all other pages
@@ -496,6 +565,7 @@ if (currentPage == "contact.html") {
     })
 };
 
+// It will add the username after the contact us link when the login button is clicked.
 if(currentPage == "login.html"){
     document.getElementById("loginButton").addEventListener("click", function(e){
         e.preventDefault();
