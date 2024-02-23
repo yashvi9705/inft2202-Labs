@@ -501,7 +501,8 @@ switch (currentPage) {
             }
             // If there is no validation errors...
             // Clear the error messages
-            displayError();
+            errorParagraph.textContent = "";
+            errorParagraph.style.display = "none";
             // Create an instance of the User class
             let user = new User(
                 firstNameInput.value,
@@ -512,6 +513,12 @@ switch (currentPage) {
             );
             // Display the User object in console
             console.log(user);
+            // Finally, clear the form
+            firstNameInput.value = "";
+            lastNameInput.value = "";
+            emailAddressInput.value = "";
+            passwordInput.value = "";
+            passwordConfirmInput.value = "";
         });
 
         function displayError(errorMessage) {
