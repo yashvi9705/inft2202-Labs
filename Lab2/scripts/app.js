@@ -455,13 +455,37 @@ switch (currentPage) {
             // Validate First Name length
             let firstNameInput = document.getElementById("inputFirstName");
             let lastNameInput = document.getElementById("inputLastName");
+            let emailAddressInput = document.getElementById("inputEmail");
+            let symbol = "@";
+            let passwordInput = document.getElementById("inputPassword");
+            let passwordConfirmInput = document.getElementById("inputConfirmPassword");
+
             if (firstNameInput.value.length < 2) {
                 displayError("First Name must be at least 2 characters.");
                 return;
             }
             // Validate Last Name length
-            else if (lastNameInput.value.length < 2) {
+            if (lastNameInput.value.length < 2) {
                 displayError("Last Name must be at least 2 characters.");
+                return;
+            }
+            if (emailAddressInput.value.includes(symbol) && emailAddressInput.value.length >= 8){
+                displayError("Email Address must contain '@'.");
+                return;
+            }
+            if(emailAddressInput.value.length <= 8){
+                displayError("Email Address cannot be less than 8 characters.");
+                return;
+            }
+            if(passwordInput.value.length < 6){
+                displayError("Your password must be greater than 6 characters.");
+                return;
+            }
+            if (passwordInput.value !== passwordConfirmInput.value){
+                displayError("Password and Confirm Password must be the same.");
+                return;
+            }
+            else{
                 return;
             }
 
