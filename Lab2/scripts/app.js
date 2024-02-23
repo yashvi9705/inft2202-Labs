@@ -4,8 +4,18 @@ Group Members:
 - Yashvi Patel: 100900705
 - Justin Wastle: 100869386
 - Andrew Mekhail: 100828858
-Date: February 18th, 2024 
+Date: February 22, 2024 
 */
+
+class User {
+    constructor(firstName, lastName, username, email, password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+}
 
 // Get Current Page
 const currentPage = window.location.pathname.split("/").pop();
@@ -278,7 +288,7 @@ switch (currentPage) {
         loginForm.id = "registration-form";
         loginForm.name = "registration-form";
         loginForm.className = "row g-3";
-        
+
         // create the header
         let loginHeader = document.createElement("h1");
         loginHeader.innerHTML = "Login";
@@ -307,8 +317,8 @@ switch (currentPage) {
             // add the icon.
             icon.className = inputObj.iconClass;
             icon.setAttribute("aria-hidden", "true");
-            div.appendChild(icon);  
-            
+            div.appendChild(icon);
+
             let label = document.createElement("label");
             label.setAttribute("for", inputObj.id);
             label.textContent = inputObj.name;
@@ -353,8 +363,8 @@ switch (currentPage) {
         registerForm.id = "registration-form";
         registerForm.name = "registration-form";
         registerForm.className = "row g-3";
-        
-    
+
+
         let registerHeader = document.createElement("h1");
         registerHeader.innerHTML = "Register";
         // Create a paragraph for the login link
@@ -435,7 +445,7 @@ switch (currentPage) {
         loginLinkParagraph.innerHTML = 'Already Have an account? <a href="./login.html">Login Here!</a>';
 
         registerForm.appendChild(loginLinkParagraph);
-        
+
         // Create an elem for the error messages div
         let errorMessagesDiv = document.createElement("div");
         errorMessagesDiv.id = "ErrorMessage";
@@ -452,7 +462,6 @@ switch (currentPage) {
             errorMessagesDiv.innerHTML = "";
             errorMessagesDiv.style.display = "none";
 
-            // Validate First Name length
             let firstNameInput = document.getElementById("inputFirstName");
             let lastNameInput = document.getElementById("inputLastName");
             let emailAddressInput = document.getElementById("inputEmail");
@@ -460,6 +469,7 @@ switch (currentPage) {
             let passwordInput = document.getElementById("inputPassword");
             let passwordConfirmInput = document.getElementById("inputConfirmPassword");
 
+            // Validate First Name length
             if (firstNameInput.value.length < 2) {
                 displayError("First Name must be at least 2 characters.");
                 return;
@@ -469,26 +479,39 @@ switch (currentPage) {
                 displayError("Last Name must be at least 2 characters.");
                 return;
             }
-            if (emailAddressInput.value.includes(symbol) && emailAddressInput.value.length >= 8){
+            // Validate Email Address @ Symbol
+            if (!emailAddressInput.value.includes(symbol)) {
                 displayError("Email Address must contain '@'.");
                 return;
             }
-            if(emailAddressInput.value.length <= 8){
+            // Validate Email Address Length
+            if (emailAddressInput.value.length <= 8) {
                 displayError("Email Address cannot be less than 8 characters.");
                 return;
             }
-            if(passwordInput.value.length < 6){
+            // Validate Password Length
+            if (passwordInput.value.length < 6) {
                 displayError("Your password must be greater than 6 characters.");
                 return;
             }
-            if (passwordInput.value !== passwordConfirmInput.value){
+            // Validate Password matches Confirm Password
+            if (passwordInput.value !== passwordConfirmInput.value) {
                 displayError("Password and Confirm Password must be the same.");
                 return;
             }
-            else{
-                return;
-            }
-
+            // If there is no validation errors...
+            // Clear the error messages
+            displayError();
+            // Create an instance of the User class
+            let user = new User(
+                firstNameInput.value,
+                lastNameInput.value,
+                `${firstNameInput.value}.${lastNameInput.value}`,
+                emailAddressInput.value,
+                passwordInput.value
+            );
+            // Display the User object in console
+            console.log(user);
         });
 
         function displayError(errorMessage) {
@@ -590,8 +613,8 @@ if (currentPage == "contact.html") {
 };
 
 // It will add the username after the contact us link when the login button is clicked.
-if(currentPage == "login.html"){
-    document.getElementById("loginButton").addEventListener("click", function(e){
+if (currentPage == "login.html") {
+    document.getElementById("loginButton").addEventListener("click", function (e) {
         e.preventDefault();
         var username = document.getElementById("inputUserName").value;
         const user = document.createElement("li");
