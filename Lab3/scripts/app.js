@@ -88,7 +88,7 @@
       let header = document.createElement("h2");
       header.style = "text-align:center";
       header.textContent = "About Us";
-      mainContent.appendChild(header);
+      document.body.appendChild(header);
 
       // Create an elem for the content div
       let contentDiv = document.createElement("div");
@@ -731,6 +731,7 @@
       <a id="taskList" class="nav-link" aria-current="page"><i class="fas fa-users fa-lg"></i> Task List</a>
     </li>`).insertBefore("#contactListItem");
       }
+
       else
       {
         // swap out the login link for logout
@@ -768,13 +769,15 @@
         case "edit": return displayEdit;
         case "login": return displayLogin;
         case "register": return displayRegister;
-        case "taskList": return DisplayTaskList;
-        case "404": return display404;
+        case "404": return display404; 
+        case "taskList": return DisplayTaskList; 
         default:
           console.error("ERROR: callback does not exist: " + activeLink);
           break;
       }
     }
+
+    
 
     /**
      * This function adds a new Task to the TaskList
@@ -797,7 +800,7 @@
               <input type="text" class="form-control edit-task editTextInput">
               </li>
               `;
-        $("#taskList").append(newElement);
+        $("#task-List").append(newElement);
         messageArea.removeAttr("class").hide();
         taskInput.val("");
       } 
@@ -876,6 +879,7 @@
         loadHeader(router.ActiveLink);
       
         loadContent(router.ActiveLink, ActiveLinkCallBack(router.ActiveLink));
+
 
         loadFooter();
     }
