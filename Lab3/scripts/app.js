@@ -88,7 +88,7 @@
       let header = document.createElement("h2");
       header.style = "text-align:center";
       header.textContent = "About Us";
-      document.body.appendChild(header);
+      mainContent.appendChild(header);
 
       // Create an elem for the content div
       let contentDiv = document.createElement("div");
@@ -727,6 +727,9 @@
         $(`<li class="nav-item">
         <a id="contact-list" class="nav-link" aria-current="page"><i class="fas fa-users fa-lg"></i> Contact List</a>
       </li>`).insertBefore("#loginListItem");
+      $(`<li class="nav-item">
+      <a id="taskList" class="nav-link" aria-current="page"><i class="fas fa-users fa-lg"></i> Task List</a>
+    </li>`).insertBefore("#contactListItem");
       }
       else
       {
@@ -765,6 +768,7 @@
         case "edit": return displayEdit;
         case "login": return displayLogin;
         case "register": return displayRegister;
+        case "taskList": return DisplayTaskList;
         case "404": return display404;
         default:
           console.error("ERROR: callback does not exist: " + activeLink);
