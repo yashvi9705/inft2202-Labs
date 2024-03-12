@@ -73,23 +73,171 @@
     }
 
     function displayHome()
-    {
-        
+    { 
+      
     }
 
     function displayAbout()
     {
+      let mainContent = document.querySelector("main");
+
+      // Clear existing content
+      mainContent.innerHTML = "";
+
+      // Create an elem for the header
+      let header = document.createElement("h2");
+      header.style = "text-align:center";
+      header.textContent = "About Us";
+      document.body.appendChild(header);
+
+      // Create an elem for the content div
+      let contentDiv = document.createElement("div");
+      contentDiv.className = "about-us";
+
+      // Create an array for our team
+      let team = [{
+          name: "Andrew",
+          image: "images/andrew.jpg", // Source: https://www.pinterest.ca/pin/588704982569796070
+      },
+      {
+          name: "Yashvi",
+          image: "images/Yashvi.jpg", // Source: https://www.pinterest.ca/pin/588704982569796118
+
+      },
+      {
+          name: "Justin",
+          image: "images/Justin.jpg", // Source: https://www.pinterest.ca/pin/588704982569796070
+      }];
+
+      for (let member of team) {
+          let detailsDiv = document.createElement("div");
+          detailsDiv.className = "details";
+
+          let cardDiv = document.createElement("div");
+          cardDiv.className = "card";
+
+          let img = document.createElement("img");
+          img.src = member.image;
+          img.alt = member.name;
+          img.style = "width:100%";
+          cardDiv.appendChild(img);
+
+          let nameDiv = document.createElement("div");
+          nameDiv.className = "container";
+          cardDiv.appendChild(nameDiv);
+
+          let nameH2 = document.createElement("h2");
+          nameH2.textContent = member.name;
+          nameDiv.appendChild(nameH2);
+
+          detailsDiv.appendChild(cardDiv);
+          contentDiv.appendChild(detailsDiv);
+      }
+      mainContent.appendChild(contentDiv);
 
     }
 
     function displayProjects()
     {
+      let mainContent = document.querySelector("main");
 
+      // Clear existing content
+      mainContent.innerHTML = "";
+
+      // Create an array of objects for the products content and images
+      let products = [
+        {
+            content: "One of our teams past projects, was a Database for Lake Ridge Healthcare Centre, located in Oshawa Ontario. The goal of this project was to improve functionality and security of information in the database. We included information on rooms, charges, patients, cost centres, and much more.",
+            image: "images/Database.jpg", // Source: https://www.pinterest.ca/pin/588704982569774273
+            imageAlt: "Database",
+        },
+        {
+            content: "Another one of our projects is a Website, used for a companies sales people to record their clients, and calls between them. It included a fully function database, that took into account emails, and passwords to allow users to log in and out safely. We also implemented hashing on passwords, for secure logins.",
+            image: "images/webpage.jpg",
+        },
+        {
+            content: "We also created a testing file, used to test a clothing sales site, for errors in searching, purchasing and selection of clothing. The testing file was able to move through the website on its own, finding errors along the way, and giving an error message for said errors.",
+            image: "images/webpage2.jpg",
+            imageAlt: "Webpage2",
+        }
+    ];
+    // Add the products to the body as div elems
+    for (let product of products) {
+        let div = document.createElement("div");
+        div.className = "products";
+
+        let p = document.createElement("p");
+        p.textContent = product.content;
+
+        let img = document.createElement("img");
+        img.src = product.image;
+        // Use the imageAlt value, if its undefined use the name of the image file
+        img.alt = product.imageAlt || product.image.split("/").pop().split(".")[0];
+        // Randomly select whether the image or paragraph is appended first
+        if (Math.random() > 0.5) {
+            div.appendChild(img);
+            div.appendChild(p);
+        } else {
+            div.appendChild(p);
+            div.appendChild(img);
+        };
+
+        mainContent.appendChild(div);
+      }
+      
     }
 
     function displayServices()
-    {
+    {   
+      let mainContent = document.querySelector("main");
 
+      // Clear existing content
+      mainContent.innerHTML = "";
+      // Create the div for the services
+      let servicesDiv = document.createElement("div");
+      servicesDiv.className = "servicesPage";
+      // Create an array of objects for the service content and images
+      let services = [
+          {
+              content: "Web Development: We can create well-functioning, appealing and inexpensive websites for consumers as each member of our team has much experience in building web applications, and sites alike. Whether you wish to display information about your product or service or to create a database/hub for your business, we can create a state-of-the-art site to meet all of your needs.",
+              image: "images/image1.gif", // Source: https://www.pinterest.ca/pin/588704982569774068
+              imageAlt: "Animation1",
+          },
+          {
+              content: "Test Automation: Our team can create testing software used to evaluate the performance of clients' websites, looking at all possible issues with each part of the site. This ensures sites meet the function they have been created for and leave users satisfied.",
+              image: "images/image2.gif", // Source: https://www.pinterest.ca/pin/588704982569774177
+              imageAlt: "Animation2",
+
+          },
+          {
+              content: "Custom Programming: We can also take requests for different coding projects, such as a database, website, windows application, and much more.",
+              image: "images/image3.gif", // Source: https://www.pinterest.ca/pin/588704982569774273
+              imageAlt: "Animation3",
+          }
+      ];
+      // Add the services to the services div
+      for (let service of services) {
+          let div = document.createElement("div");
+          div.className = "products";
+
+          let p = document.createElement("p");
+          p.textContent = service.content;
+
+          let img = document.createElement("img");
+          img.src = service.image;
+          // Use the imageAlt value, if its undefined use the name of the image file
+          img.alt = service.imageAlt || service.image.split("/").pop().split(".")[0];
+          // Randomly select whether the image or paragraph is appended first
+          if (Math.random() > 0.5) {
+              div.appendChild(img);
+              div.appendChild(p);
+          } else {
+              div.appendChild(p);
+              div.appendChild(img);
+          };
+          servicesDiv.appendChild(div);
+        }
+        mainContent.appendChild(servicesDiv); 
     }
 
     function testFullName()
@@ -180,8 +328,6 @@
 
     function displayContactList() 
     {
-
-
       // don't allow visitors to go here
       authGuard();
 
@@ -371,6 +517,185 @@
 
     function displayRegister()
     {
+      let mainContent = document.querySelector("main");
+
+      // Clear existing content
+      mainContent.innerHTML = "";
+
+      let registerDivMain = document.createElement("div");
+        registerDivMain.id = "UserRegister";
+
+        // Create an elem for the contact form
+        let registerForm = document.createElement("form");
+        registerForm.id = "registration-form";
+        registerForm.name = "registration-form";
+        registerForm.className = "row g-3";
+
+
+        let registerHeader = document.createElement("h1");
+        registerHeader.innerHTML = "Register";
+        // Create a paragraph for the login link
+        let registerDescription = document.createElement("p");
+        registerDescription.innerHTML = "Create your own account  It's free and it only takes a minute";
+        registerForm.appendChild(registerHeader);
+        registerForm.appendChild(registerDescription);
+
+        let errorParagraph = document.createElement("p");
+        errorParagraph.id = "ErrorMessage";
+        errorParagraph.style.display = "none";
+        registerForm.appendChild(errorParagraph);
+
+        // Create an array for the input objects
+        let inputs = [{
+            id: "inputFirstName",
+            name: "First Name",
+            type: "text",
+            colClass: "col-md-6",
+        },
+        {
+            id: "inputLastName",
+            name: "Last Name",
+            type: "text",
+            colClass: "col-md-6",
+        },
+        {
+            id: "inputEmail",
+            name: "Email Address",
+            type: "email",
+            colClass: "col-12",
+        },
+        {
+            id: "inputPassword",
+            name: "Password",
+            type: "password",
+            colClass: "col-12",
+        },
+        {
+            id: "inputConfirmPassword",
+            name: "Confirm Password",
+            type: "password",
+            colClass: "col-12",
+        }];
+
+        // Add each input object to the form
+        for (let inputObj of inputs) {
+            let div = document.createElement("div");
+            div.className = `form-group ${inputObj.colClass}`;
+
+            let label = document.createElement("label");
+            label.setAttribute("for", inputObj.id);
+            label.className = inputObj.classes
+            label.textContent = inputObj.name;
+            div.appendChild(label);
+
+            let input = document.createElement("input");
+            input.type = inputObj.type;
+            input.className = "form-control";
+            input.id = inputObj.id;
+            input.placeholder = inputObj.name;
+            div.appendChild(input);
+
+            registerForm.appendChild(div);
+        }
+
+        // Create an element for the submit button
+        let submitButton = document.createElement("button");
+        submitButton.type = "submit";
+        submitButton.className = "btn btn-primary";
+        submitButton.textContent = "Register";
+
+        // Add the button to the form
+        registerForm.appendChild(submitButton);
+
+        // Create a paragraph for the login link
+        let loginLinkParagraph = document.createElement("p");
+        loginLinkParagraph.innerHTML = 'Already Have an account? <a href="./login.html">Login Here!</a>';
+
+        registerForm.appendChild(loginLinkParagraph);
+
+        // Create an elem for the error messages div
+        let errorMessagesDiv = document.createElement("div");
+        errorMessagesDiv.id = "ErrorMessage";
+        errorMessagesDiv.style.display = "none"; // Initially hide the error messages
+
+        // Append the error messages div to the body
+        document.body.appendChild(errorMessagesDiv);
+
+        // Validate First Name and Last Name length on form submission
+        registerForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Clear previous error messages
+            errorMessagesDiv.innerHTML = "";
+            errorMessagesDiv.style.display = "none";
+
+            let firstNameInput = document.getElementById("inputFirstName");
+            let lastNameInput = document.getElementById("inputLastName");
+            let emailAddressInput = document.getElementById("inputEmail");
+            let symbol = "@";
+            let passwordInput = document.getElementById("inputPassword");
+            let passwordConfirmInput = document.getElementById("inputConfirmPassword");
+
+            // Validate First Name length
+            if (firstNameInput.value.length < 2) {
+                displayError("First Name must be at least 2 characters.");
+                return;
+            }
+            // Validate Last Name length
+            if (lastNameInput.value.length < 2) {
+                displayError("Last Name must be at least 2 characters.");
+                return;
+            }
+            // Validate Email Address @ Symbol
+            if (!emailAddressInput.value.includes(symbol)) {
+                displayError("Email Address must contain '@'.");
+                return;
+            }
+            // Validate Email Address Length
+            if (emailAddressInput.value.length <= 8) {
+                displayError("Email Address cannot be less than 8 characters.");
+                return;
+            }
+            // Validate Password Length
+            if (passwordInput.value.length < 6) {
+                displayError("Your password must be greater than 6 characters.");
+                return;
+            }
+            // Validate Password matches Confirm Password
+            if (passwordInput.value !== passwordConfirmInput.value) {
+                displayError("Password and Confirm Password must be the same.");
+                return;
+            }
+            // If there is no validation errors...
+            // Clear the error messages
+            errorParagraph.textContent = "";
+            errorParagraph.style.display = "none";
+            // Create an instance of the User class
+            let user = new User(
+                firstNameInput.value,
+                lastNameInput.value,
+                `${firstNameInput.value}.${lastNameInput.value}`,
+                emailAddressInput.value,
+                passwordInput.value
+            );
+            // Display the User object in console
+            console.log(user);
+            // Finally, clear the form
+            firstNameInput.value = "";
+            lastNameInput.value = "";
+            emailAddressInput.value = "";
+            passwordInput.value = "";
+            passwordConfirmInput.value = "";
+        });
+
+        function displayError(errorMessage) {
+            // Display error message in the div      
+            errorParagraph.textContent = errorMessage;
+            errorParagraph.style.display = "block";
+        }
+
+        registerDivMain.appendChild(registerForm);
+        mainContent.appendChild(registerDivMain);
 
     }
 
@@ -423,6 +748,7 @@
 
     function display404()
     {
+      
 
     }
 
@@ -432,7 +758,7 @@
       {
         case "home": return displayHome;
         case "about": return displayAbout;
-        case "projects": return displayProjects;
+        case "projects": return displayProjects; 
         case "services": return displayServices;
         case "contact": return displayContact;
         case "contact-list": return displayContactList;
@@ -484,6 +810,7 @@
      */
     function DisplayTaskList()
     {
+      
         let messageArea = $("#messageArea");
         messageArea.hide();
         let taskInput = $("#taskTextInput");
